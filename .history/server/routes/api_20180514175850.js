@@ -33,7 +33,7 @@ router.get('/keys/:key', function(req, res, next) {
         response.data = gotKey;
         // console.log(response);
         res.json(response.data);
-        JSON.stringify(response.data); 
+        JSON.stringify(response.data);
       }).catch(next);
   })
 

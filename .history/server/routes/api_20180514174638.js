@@ -28,12 +28,11 @@ let response = {
 
 router.get('/keys/:key', function(req, res, next) {
     
-    const result = Key.findOne({ key: req.params.key }, 'notes').select('-_id')
+    const result = Key.findOne({ key: req.params.key }, 'notes').select('-_id').regex(/[""]/g, '')
       .then(function(gotKey) {
         response.data = gotKey;
         // console.log(response);
-        res.json(response.data);
-        JSON.stringify(response.data); 
+        res.json(response.data)      
       }).catch(next);
   })
 

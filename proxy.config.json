@@ -1,0 +1,10 @@
+{
+    "/server/routes/api/*": {
+        "target": "http://localhost:4200",
+        "secure": false,
+        "pathRewrite": {
+            "^/server/routes/api": ""
+        },
+        "changeOrigin": false        
+    }
+}

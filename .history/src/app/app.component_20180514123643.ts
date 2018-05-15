@@ -14,15 +14,13 @@ export class AppComponent {
   
 
 
-  
-  
-  constructor(private keysService: KeysService) {
-  }
-
   typeKey: '';
   dataPassed = false;
   test: '';
   
+  
+  constructor(private keysService: KeysService) {
+  }
 
   getKeyClass(typeKey) {
     if (this.test !== null) {
@@ -33,5 +31,5 @@ export class AppComponent {
         this.test = test;
         }       
       );    
-    }
+    } 
   }

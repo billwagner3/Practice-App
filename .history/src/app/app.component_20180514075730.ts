@@ -11,18 +11,16 @@ import { KeysService } from './keys.service';
 })
 export class AppComponent {
   title = 'The Scale Certainty Application';
-  
+  apiUrl = '../../server/routes/api/keys/:key';
 
-
-  
-  
-  constructor(private keysService: KeysService) {
-  }
 
   typeKey: '';
   dataPassed = false;
   test: '';
   
+  
+  constructor(private keysService: KeysService) {
+  }
 
   getKeyClass(typeKey) {
     if (this.test !== null) {
@@ -33,5 +31,5 @@ export class AppComponent {
         this.test = test;
         }       
       );    
-    }
+    } 
   }

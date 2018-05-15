@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
-import * as _ from 'lodash';
+import { HttpParams } from '@angular/common/http';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -10,11 +10,11 @@ export class KeysService {
 
   result: any
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpParams) {}
   
   getKeys(typeKey) {
       
-    return this._http.get(`api/keys/${typeKey}`).do(console.log)
-          .map(result => _.values(result));
+    return this._http.get(`api/keys/${typeKey}`)
+          .map(result => this.result = result.json().data);
       }
     }

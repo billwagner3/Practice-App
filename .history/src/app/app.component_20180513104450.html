@@ -12,8 +12,8 @@
       <br><br>
       <h2>The Correct Key Spelling is: </h2>
 
-      
-      <h1 *ngIf="dataPassed">Key:{{ test }}</h1>
+      <!-- <ng-container *ngFor="let key of test"> -->
+      <p *ngIf="dataPassed" >Key:{{ test | json }}</p>
     </div>
   </div>
 </div>
